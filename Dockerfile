@@ -15,7 +15,7 @@ RUN apt update \
     && echo "\
        #!/bin/bash\n\
        echo 'I am alive'\n\
-       sleep 10\n\
+       sleep 5\n\
        echo 'I am starting qpid-config'\n\
        qpid-config --durable add queue my_queue su\n\
        echo 'The queues created'\n" \
