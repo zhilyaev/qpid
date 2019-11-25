@@ -6,6 +6,7 @@ RUN apt update \
     && add-apt-repository ppa:qpid/released \
     && apt-get update \
     && apt install -y qpidd qpid-tools sasl2-bin \
+    && rm -rf /var/lib/apt/lists/* \
     && mkdir -p /var/lib/qpidd \
     && echo $qpid_user_pass | saslpasswd2 -p -c -f /var/lib/qpidd/qpidd.sasldb -u QPID user \
     && echo $qpid_admin_pass  | saslpasswd2 -p -c -f /var/lib/qpidd/qpidd.sasldb -u QPID admin \
