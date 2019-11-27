@@ -2,6 +2,20 @@
 This is production ready docker image for apache qpid broker via official ubuntu ppa
 
 ## Custom entrypoint
+You need use your entrypoint.sh for qpid-config
+
+##### Example entrypoint.sh
+```bash
+#!/bin/bash
+echo 'I am alive'
+# Waiting qpid deamon
+sleep 5
+echo 'I am starting qpid-config'\n\
+qpid-config --durable add queue my_queue
+echo 'The queues created'
+```
+
+##### Basic
 ```bash
 docker run --entrypoint="qpid" diamon/qpid
 ```
