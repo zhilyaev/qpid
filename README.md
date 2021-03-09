@@ -1,6 +1,13 @@
 # QPID
 This is production ready docker image for apache qpid broker via official ubuntu ppa
 
+
+## Run
+
+```bash
+$ docker pull diamon/qpid
+```
+
 ## Custom entrypoint
 You need use your entrypoint.sh for qpid-config
 
